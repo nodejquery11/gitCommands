@@ -1,0 +1,30 @@
+Branch:
+> git checkout -b <branch_name>
+> git checkout <branch_name> [if you need to move one branch to another]
+
+Stash:
+> git stash save "<message>"
+It will create the stash and you store your changes on it. But not to be commit. Stash is like list of array and it works like stage `first in last out`
+
+> git stash list [to show the list of stash]
+statsh@{<array_number>} <message>
+
+> git stash pop [it will return the last index stash value]
+or
+>git stash pop stash@{0 to n} [it will pop the specific stash]
+
+Pull:
+> git pull [for master]
+> git pull <branch_name> / master [if you are in branch and need to update your branch from parent branch or master then run the command]
+> git pull origin master & git pull origin/master
+After run above command, if it will return the conflict in one short then you need to resolve conflict
+> git rebase master
+It will update the child branch to fetch the single commit. For example, if you have done 3 commit for single project then `git rebase master` will fetch the all three commit one by one and if any conflict will there then it will ask you to resolve and stage or commit it. And then run the below three command as per your requirments
+> git rebase --continue [it will call the next commit line]
+> git rebase --skip [it will skip the current commit]
+> git rebase --abort [it will abort the all commits]
+
+
+
+Difference B/w
+1. http://stackoverflow.com/questions/2883840/differences-between-git-pull-origin-master-git-pull-origin-master  
